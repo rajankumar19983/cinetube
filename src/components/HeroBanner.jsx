@@ -30,11 +30,8 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {!loading && url?.backdrop && (
+      {!loading && heroBackground && url?.backdrop && (
         <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
-          {console.log("loading====>" + loading)}
-          {console.log(url)}
-          {console.log("backdrop===>" + url.backdrop)}
           <Img
             className="w-full h-full object-cover object-center"
             src={heroBackground}
