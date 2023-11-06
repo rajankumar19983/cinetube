@@ -1,13 +1,222 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.lazy-load-image-background {
+  width: 100%;
+  height: 100%;
+}
+
+.posterBlock .lazy-load-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.movieCardPosterBlock .lazy-load-image-background img {
+  width: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.CircularProgressbar-text {
+  font-weight: 700;
+}
+
+.hero_opac_layer {
+  background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+}
+
+.transitionAll3By10Ease {
+  transition: all ease 0.3s;
+}
+
+.transitionAll5By10Ease {
+  transition: all ease 0.5s;
+}
+
+.polygonStyles {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 480;
+  stroke: white;
+  transform: translateY(0);
+  transition: all 0.7s ease-in-out;
+}
+
+.circleStyles {
+  stroke: white;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 1300;
+  transition: all 0.5s ease-in-out;
+}
+
+.playIcon:hover {
+  color: #da2f68;
+}
+
+.videoSectionThumbnail:hover .lazy-load-image-background {
+  opacity: 0.5;
+}
+
+.playIcon:hover .triangle,
+.videoSectionThumbnail:hover .triangle {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  stroke: #da2f68;
+  animation: trailorPlay 0.7s ease-in-out;
+}
+
+.playIcon:hover .circle,
+.videoSectionThumbnail:hover .circle {
+  stroke-dashoffset: 0;
+  stroke: #da2f68;
+}
+
+.transitionAll7By10EaseInOut {
+  transition: all 0.7s ease-in-out;
+}
+
+.icon_shadow {
+  box-shadow: 0 0 0.625em #da2f68;
+}
+
+.tab_transition {
+  transition: left 0.2s;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #0a2955;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    #19376300 0,
+    #19376320 20%,
+    #19376350 60%,
+    #19376300
+  );
+  animation: shimmer 2s infinite;
+}
+
+.transitionAll5By10Ease .lazy-load-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.textBlock:hover .movieCardPosterBlock {
+  opacity: 0.5;
+}
+
+.searchResultMovieCard .movieCardPosterBlock {
+  margin-bottom: 20px;
+}
+
+.react-select-container.genresDD {
+  width: 100%;
+}
+
+.react-select-container.sortByDD {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.react-select-container .react-select__control {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  background-color: #173d77;
+  border-radius: 20px;
+}
+
+.react-select-container
+  .react-select__control
+  .react-select__value-container
+  .react-select__placeholder,
+.react-select__input-container {
+  color: white;
+  margin: 0 10px;
+}
+
+.react-select-container .react-select__control .react-select__single-value {
+  color: white;
+}
+
+.react-select-container .react-select__control .react-select__multi-value {
+  background-color: #020c1b;
+  border-radius: 10px;
+}
+
+.react-select-container
+  .react-select__control
+  .react-select__multi-value
+  .react-select__multi-value__label {
+  color: white;
+}
+
+.react-select-container
+  .react-select__control
+  .react-select__multi-value
+  .react-select__multi-value__remove {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.react-select-container
+  .react-select__control
+  .react-select__multi-value
+  .react-select__multi-value__remove:hover {
+  color: #173d77;
+}
+
+.react-select-container .react-select__menu {
+  top: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .react-select-container.genresDD {
+    max-width: 500px;
+    min-width: 250px;
+  }
+  .react-select-container.sortByDD {
+    width: 250px;
+  }
+}
+
+.explorePageMovieCard .movieCardPosterBlock {
+  margin-bottom: 30px;
 }
