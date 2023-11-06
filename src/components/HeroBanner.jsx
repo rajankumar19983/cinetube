@@ -17,9 +17,13 @@ const HeroBanner = () => {
   useEffect(() => {
     const bg =
       url?.backdrop +
-      data?.results?.[Math.floor(Math.random() * data?.results?.length)]
-        ?.backdrop_path;
+      String(
+        data?.results?.[Math.floor(Math.random() * data?.results?.length)]
+          ?.backdrop_path
+      );
     setHeroBackground(bg);
+    console.log(url);
+    console.log("heroBG===>" + heroBackground);
   }, [data]);
 
   const searchQueryHandler = (e) => {
@@ -32,7 +36,7 @@ const HeroBanner = () => {
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
       {!loading &&
         heroBackground &&
-        !/undefined/.test(heroBackground) &&
+        !heroBackground.includes("undefined") &&
         url?.backdrop && (
           <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
             {console.log(heroBackground)}
