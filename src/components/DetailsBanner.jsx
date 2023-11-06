@@ -33,7 +33,7 @@ const DetailsBanner = ({ video, crew }) => {
     const minutes = totalMinutes % 60;
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
   };
-  // console.log(video);
+
   return (
     <div className="w-full bg-black_1 pt-[100px] mb-[50px] md:mb-0 md:pt-[120px] md:min-h-[700px]">
       {!loading ? (

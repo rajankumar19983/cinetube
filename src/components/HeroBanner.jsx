@@ -13,14 +13,20 @@ const HeroBanner = () => {
 
   const { url } = useSelector((store) => store.home);
   const { data, loading } = useFetch("/movie/upcoming");
+  console.log(data);
 
   useEffect(() => {
-    const bg =
-      url?.backdrop +
-      data?.results?.[Math.floor(Math.random() * data?.results?.length)]
-        ?.backdrop_path;
+    const backdropLink = url?.backdrop;
+    console.log("backdropLink====>" + backdropLink);
+    const randomIndex = Math.floor(Math.random() * data?.results?.length);
+    console.log("randomIndex====>" + randomIndex);
+    // const bg =
+    //   url?.backdrop +
+    //   data?.results?.[Math.floor(Math.random() * data?.results?.length)]
+    //     ?.backdrop_path;
+    const bg = backdropLink + data?.results?.[randomIndex]?.backdrop_path;
+    console.log("overall bg link====>" + bg);
     setHeroBackground(bg);
-    // console.log(bg);
   }, [data]);
 
   const searchQueryHandler = (e) => {
@@ -31,7 +37,7 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {!loading && heroBackground && (
+      {data && heroBackground && (
         <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
           <Img
             className="w-full h-full object-cover object-center"
