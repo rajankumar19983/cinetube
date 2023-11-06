@@ -15,7 +15,6 @@ const Details = () => {
   );
 
   const trailerData = data?.results?.filter((r) => {
-    // return r.name === "Official Trailer" || "Original Trailer" || "Trailer";
     return ["Official Trailer", "Original Trailer", "Trailer"].includes(r.name);
   });
 
