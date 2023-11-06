@@ -13,7 +13,6 @@ const HeroBanner = () => {
 
   const { url } = useSelector((store) => store.home);
   const { data, loading } = useFetch("/movie/upcoming");
-  console.log(data);
 
   useEffect(() => {
     const bg =
@@ -31,7 +30,7 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {!loading && url && (
+      {!loading && "backdrop" in url && (
         <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
           <Img
             className="w-full h-full object-cover object-center"
