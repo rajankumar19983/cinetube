@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useSelector } from "react-redux";
@@ -32,6 +32,9 @@ const HeroBanner = () => {
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
       {!loading && url?.backdrop && (
         <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
+          {console.log("loading====>" + loading)}
+          {console.log(url)}
+          {console.log("backdrop===>" + url.backdrop)}
           <Img
             className="w-full h-full object-cover object-center"
             src={heroBackground}
