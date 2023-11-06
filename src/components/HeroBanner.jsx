@@ -30,14 +30,18 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {!loading && heroBackground && url?.backdrop && (
-        <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
-          <Img
-            className="w-full h-full object-cover object-center"
-            src={heroBackground}
-          />
-        </div>
-      )}
+      {!loading &&
+        heroBackground &&
+        !/undefined/.test(heroBackground) &&
+        url?.backdrop && (
+          <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
+            {console.log(heroBackground)}
+            <Img
+              className="w-full h-full object-cover object-center"
+              src={heroBackground}
+            />
+          </div>
+        )}
       <div className="w-full h-[250px] absolute bottom-0 left-0 hero_opac_layer"></div>
       <ContentWrapper>
         <div className="flex flex-col items-center text-white text-center relative max-w-[800px] mx-auto">
