@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+// import SignIn from "./components/SignIn";
+// import SignUp from "./components/SignUp";
 import Home from "./pages/Home";
-import MyAccount from "./pages/MyAccount";
+// import MyAccount from "./pages/MyAccount";
 import Details from "./pages/Details";
 import SearchResult from "./pages/SearchResults";
 import Explore from "./pages/Explore";
@@ -61,7 +61,7 @@ function App() {
           path="/"
           element={<Home />}
         />
-        <Route
+        {/* <Route
           path="/signup"
           element={<SignUp />}
         />
@@ -72,7 +72,7 @@ function App() {
         <Route
           path="/account"
           element={<MyAccount />}
-        />
+        /> */}
         <Route
           path="/:mediaType/:id"
           element={<Details />}

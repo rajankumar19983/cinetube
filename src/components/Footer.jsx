@@ -20,14 +20,10 @@ const Footer = () => {
           <li className={listStyle}>FAQ</li>
         </ul>
         <div className="text-[12px] leading-tight opacity-50 text-center max-w-[800px] mb-[20px] md:text-[14px] md:mb-[30px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          vestibulum leo et tincidunt consectetur. Nullam aliquam placerat eros,
-          vitae faucibus diam eleifend eu. Fusce faucibus laoreet auctor.
-          Quisque placerat tempus neque, sit amet euismod velit vestibulum eu.
-          Vestibulum ultrices rhoncus porta. Nulla facilisi. Quisque convallis
-          feugiat felis, eu facilisis sem. Morbi imperdiet pellentesque metus,
-          et accumsan velit sagittis vel. Sed placerat semper tellus vel
-          commodo.
+          CINETUBE, your ultimate destination for all things cinematic! Immerse
+          yourself in the world of movies and TV series like never before.
+          Discover the latest trailers, delve into comprehensive details, and
+          stay up-to-date with the entertainment industry's hottest releases.
         </div>
         <div className="flex items-center justify-center gap-[10px]">
           <span className={iconStyle}>

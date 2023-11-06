@@ -7,12 +7,12 @@ import CircleRating from "./CircleRating";
 import Genres from "./Genres";
 import PosterFallback from "../assets/no-poster.png";
 import { twMerge } from "tailwind-merge";
-import { UserAuth } from "../context/AuthContext";
+// import { UserAuth } from "../context/AuthContext";
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
-  const [liked, setLiked] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const { user } = UserAuth();
+  // const [liked, setLiked] = useState(false);
+  // const [saved, setSaved] = useState(false);
+  // const { user } = UserAuth();
   const { url } = useSelector((store) => store.home);
   const navigate = useNavigate();
   const posterUrl = data?.poster_path
@@ -56,9 +56,9 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
             />
           </React.Fragment>
         )}
-        <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white p-2">
+        {/* <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white p-2">
           <p>{}</p>
-        </div>
+        </div> */}
       </div>
       <div className="textBlock text-white flex flex-col">
         <span className="text-[16px] mb-[10px] leading-6 md:text-[20px] line-clamp-1 overflow-hidden">

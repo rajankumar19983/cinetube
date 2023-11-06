@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const MyAccount = () => {
-  return <div>MyAccount</div>;
-};
+// const MyAccount = () => {
+//   return <div>MyAccount</div>;
+// };
 
-export default MyAccount;
+// export default MyAccount;

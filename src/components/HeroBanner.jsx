@@ -33,14 +33,12 @@ const HeroBanner = () => {
   // }, [data, url]);
 
   useEffect(() => {
-    console.log(url);
     const bg =
       url?.backdrop +
       String(
         data?.results?.[Math.floor(Math.random() * data?.results?.length)]
           ?.backdrop_path
       );
-    console.log("bg------>" + bg);
     setHeroBackground(bg);
   }, [data, url]);
 
