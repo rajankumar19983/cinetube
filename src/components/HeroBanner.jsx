@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useSelector } from "react-redux";
@@ -8,23 +8,41 @@ import ContentWrapper from "./ContentWrapper";
 const HeroBanner = () => {
   const [heroBackground, setHeroBackground] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [shouldRender, setShouldRender] = useState(
+    !!useSelector((store) => store.home)
+  );
 
   const navigate = useNavigate();
 
   const { url } = useSelector((store) => store.home);
   const { data, loading } = useFetch("/movie/upcoming");
 
+  // useEffect(() => {
+  //   const heroBgImageSetter = setInterval(() => {
+  //     const bg =
+  //       url?.backdrop +
+  //       String(
+  //         data?.results?.[Math.floor(Math.random() * data?.results?.length)]
+  //           ?.backdrop_path
+  //       );
+  //     console.log(url.backdrop);
+  //     setHeroBackground(bg);
+  //   }, 5000);
+
+  //   return () => clearInterval(heroBgImageSetter);
+  // }, [data, url]);
+
   useEffect(() => {
+    console.log(url);
     const bg =
       url?.backdrop +
       String(
         data?.results?.[Math.floor(Math.random() * data?.results?.length)]
           ?.backdrop_path
       );
+    console.log("bg------>" + bg);
     setHeroBackground(bg);
-    console.log(url);
-    console.log("heroBG===>" + heroBackground);
-  }, [data]);
+  }, [data, url]);
 
   const searchQueryHandler = (e) => {
     if ((e.key === "Enter" || e.type === "click") && searchQuery.length > 0) {
@@ -34,12 +52,12 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {!loading &&
+      {shouldRender &&
+        !loading &&
         heroBackground &&
         !heroBackground.includes("undefined") &&
         url?.backdrop && (
           <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
-            {console.log(heroBackground)}
             <Img
               className="w-full h-full object-cover object-center"
               src={heroBackground}
