@@ -16,16 +16,10 @@ const HeroBanner = () => {
   console.log(data);
 
   useEffect(() => {
-    const backdropLink = url?.backdrop;
-    console.log("backdropLink====>" + backdropLink);
-    const randomIndex = Math.floor(Math.random() * data?.results?.length);
-    console.log("randomIndex====>" + randomIndex);
-    // const bg =
-    //   url?.backdrop +
-    //   data?.results?.[Math.floor(Math.random() * data?.results?.length)]
-    //     ?.backdrop_path;
-    const bg = backdropLink + data?.results?.[randomIndex]?.backdrop_path;
-    console.log("overall bg link====>" + bg);
+    const bg =
+      url?.backdrop +
+      data?.results?.[Math.floor(Math.random() * data?.results?.length)]
+        ?.backdrop_path;
     setHeroBackground(bg);
   }, [data]);
 
@@ -37,7 +31,7 @@ const HeroBanner = () => {
 
   return (
     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
-      {data && heroBackground && (
+      {!loading && url && (
         <div className="w-full h-full absolute top-0 left-0 opacity-50 overflow-hidden">
           <Img
             className="w-full h-full object-cover object-center"

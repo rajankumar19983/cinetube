@@ -18,8 +18,6 @@ const Details = () => {
     return ["Official Trailer", "Original Trailer", "Trailer"].includes(r.name);
   });
 
-  console.log(data);
-
   return (
     <div>
       <DetailsBanner
