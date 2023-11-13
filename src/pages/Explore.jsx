@@ -130,7 +130,7 @@ const Explore = () => {
           <>
             {data?.results?.length > 0 ? (
               <InfiniteScroll
-                className="flex flex-wrap gap-[10px] mb-[50px] md:gap-[20px]"
+                className="flex flex-wrap gap-[10px] mb-[50px] md:gap-5"
                 dataLength={data?.results?.length || []}
                 next={fetchNextPageData}
                 hasMore={pageNum <= data?.total_pages}

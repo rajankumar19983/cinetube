@@ -36,10 +36,10 @@ const Carousel = ({ data, loading, endPoint, title }) => {
   const skItem = () => {
     return (
       <div className="w-[125px] md:w-25%-15px lg:w-20%-16px flex-shrink-0">
-        <div className="rounded-[12px] w-full aspect-[1/1.5] mb-[30px] skeleton animate-[shimmer]"></div>
+        <div className="rounded-xl w-full aspect-[1/1.5] mb-[30px] skeleton animate-[shimmer]"></div>
         <div className="flex flex-col">
-          <div className="w-full h-[20px] mb-[10px] skeleton"></div>
-          <div className="w-[75%] h-[20px] skeleton"></div>
+          <div className="w-full h-5 mb-[10px] skeleton"></div>
+          <div className="w-[75%] h-5 skeleton"></div>
         </div>
       </div>
     );
@@ -49,9 +49,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
     <div className="mb-[50px]">
       <ContentWrapper className={"relative"}>
         {title && (
-          <div className="text-[24px] text-white mb-[20px] font-normal">
-            {title}
-          </div>
+          <div className="text-[24px] text-white mb-5 font-normal">{title}</div>
         )}
         <BsFillArrowLeftCircleFill
           className={`${navArrowStyle} left-[30px]`}
@@ -63,7 +61,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
         />
         {!loading ? (
           <div
-            className="flex gap-[10px] overflow-y-hidden mx-[-20px] px-[20px] md:gap-[20px] md:overflow-hidden md:m-0 md:p-0"
+            className="flex gap-[10px] overflow-y-hidden -mx-5 px-5 md:gap-5 md:overflow-hidden md:m-0 md:p-0"
             ref={carouselContainer}
           >
             {data?.map((item) => {
@@ -82,7 +80,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                     <Img src={posterUrl} />
                     <CircleRating
                       rating={item.vote_average.toFixed(1)}
-                      styles="w-[40px] h-[40px] relative top-[30px] bg-white flex-shrink-0 md:w-[50px] md:h-[50px]"
+                      styles="w-10 h-10 relative top-[30px] bg-white flex-shrink-0 md:w-[50px] md:h-[50px]"
                       textColor="#04152d"
                     />
                     <Genres
@@ -93,7 +91,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                     />
                   </div>
                   <div className="text-white flex flex-col">
-                    <span className="text-[16px] mb-10px leading-[24px] md:text-[20px]">
+                    <span className="text-[16px] mb-10px leading-6 md:text-[20px]">
                       {item.title || item.name}
                     </span>
                     <span className="text-[14px] opacity-50">
@@ -105,7 +103,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
             })}
           </div>
         ) : (
-          <div className="flex gap-[10px] overflow-y-hidden mx-[-20px] px-[20px] md:gap-[20px] md:overflow-hidden md:m-0 md:p-0">
+          <div className="flex gap-[10px] overflow-y-hidden -mx-5 px-5 md:gap-5 md:overflow-hidden md:m-0 md:p-0">
             {skItem()}
             {skItem()}
             {skItem()}

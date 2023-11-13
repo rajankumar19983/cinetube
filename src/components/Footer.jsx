@@ -12,14 +12,14 @@ const Footer = () => {
   return (
     <footer className="bg-black_3 py-[50px] text-white relative">
       <ContentWrapper className="flex items-center flex-col">
-        <ul className="list-none flex items-center justify-center gap-[15px] mb-[20px] md:mb-[30px] md:gap-[30px]">
+        <ul className="list-none flex items-center justify-center gap-[15px] mb-5 md:mb-[30px] md:gap-[30px]">
           <li className={listStyle}>Terms & Conditions</li>
           <li className={listStyle}>Privacy-Policy</li>
           <li className={listStyle}>About</li>
           <li className={listStyle}>Blog</li>
           <li className={listStyle}>FAQ</li>
         </ul>
-        <div className="text-[12px] leading-tight opacity-50 text-center max-w-[800px] mb-[20px] md:text-[14px] md:mb-[30px]">
+        <div className="text-[12px] leading-tight opacity-50 text-center max-w-[800px] mb-5 md:text-[14px] md:mb-[30px]">
           CINETUBE, your ultimate destination for all things cinematic! Immerse
           yourself in the world of movies and TV series like never before.
           Discover the latest trailers, delve into comprehensive details, and

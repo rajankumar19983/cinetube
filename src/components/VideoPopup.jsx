@@ -32,7 +32,7 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
         )}
       >
         <span
-          className="absolute top-[-20px] right-0 text-white cursor-pointer"
+          className="absolute -top-5 right-0 text-white cursor-pointer"
           onClick={hidePopup}
         >
           Close

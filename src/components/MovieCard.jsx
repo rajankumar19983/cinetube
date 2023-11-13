@@ -45,7 +45,7 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
           <React.Fragment>
             <CircleRating
               styles={
-                "w-[40px] h-[40px] relative top-[30px] bg-white flex-shrink-0 md:w-[50px] md:h-[50px]"
+                "w-10 h-10 relative top-[30px] bg-white flex-shrink-0 md:w-[50px] md:h-[50px]"
               }
               rating={data.vote_average.toFixed(1)}
               textColor="#04152d"

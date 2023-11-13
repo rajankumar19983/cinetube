@@ -18,7 +18,7 @@ const Header = () => {
 
   const listStyle = `text-white font-medium cursor-pointer hover:text-pink ${
     mobileMenu
-      ? "text-[20px] w-full h-auto px-[20px] py-[15px] m-0 flex flex-col items-start last:hidden"
+      ? "text-[20px] w-full h-auto px-5 py-[15px] m-0 flex flex-col items-start last:hidden"
       : "h-[60px] text-2xl flex items-center mx-[15px] relative"
   }`;
 
@@ -98,7 +98,7 @@ const Header = () => {
         <ul
           className={`${
             mobileMenu
-              ? "w-full flex flex-col absolute top-[60px] left-0 bg-black_3 py-[20px] border-t border-solid border-t-white/10 animate-[mobileMenu_0.3s_ease_forwards]"
+              ? "w-full flex flex-col absolute top-[60px] left-0 bg-black_3 py-5 border-t border-solid border-t-white/10 animate-[mobileMenu_0.3s_ease_forwards]"
               : "list-none hidden items-center md:flex"
           }`}
         >
@@ -118,7 +118,7 @@ const Header = () => {
             <HiOutlineSearch onClick={openSearch} />
           </li>
         </ul>
-        <div className="flex items-center gap-[20px] md:hidden">
+        <div className="flex items-center gap-5 md:hidden">
           <HiOutlineSearch
             className="text-2xl text-white font-medium"
             onClick={openSearch}
@@ -139,7 +139,7 @@ const Header = () => {
       {showSearch && (
         <div className="w-full h-[60px] bg-white absolute top-[60px] animate-[mobileMenu_0.3s_ease_forwards]">
           <ContentWrapper>
-            <div className="w-full flex items-center h-[40px] mt-[10px]">
+            <div className="w-full flex items-center h-10 mt-[10px]">
               <input
                 className="w-full h-[50px] bg-white outline-0 border-none rounded-l-[30px] px-[15px] text-[14px] md:h-[60px] md:text-[20px] md:px-[30px]"
                 type="text"

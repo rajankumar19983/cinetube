@@ -11,7 +11,7 @@ import PosterFallback from "../assets/no-poster.png";
 import PlayIcon from "./PlayIcon";
 import VideoPopup from "./VideoPopup";
 
-const rowStyle = "w-full h-[25px] mb-[20px] rounded-[50px]";
+const rowStyle = "w-full h-[25px] mb-5 rounded-[50px]";
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
@@ -83,14 +83,14 @@ const DetailsBanner = ({ video, crew }) => {
                       />
                       {video?.key && (
                         <div
-                          className="flex items-center gap-[20px] cursor-pointer playIcon"
+                          className="flex items-center gap-5 cursor-pointer playIcon"
                           onClick={() => {
                             setShow(true);
                             setVideoId(video.key);
                           }}
                         >
                           <PlayIcon
-                            svgStyles="w-[60px] md:w-[80px]"
+                            svgStyles="w-[60px] md:w-20"
                             polygonStyles="polygonStyles"
                             circleStyles="circleStyles"
                           />

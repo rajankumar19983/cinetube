@@ -12,8 +12,8 @@ const VideoSection = ({ data, loading }) => {
     return (
       <div className="w-[150px] flex-shrink-0 md:w-1/4">
         <div className="w-full aspect-[16/9] rounded-xl mb-[10px] skeleton"></div>
-        <div className="h-[20px] w-full rounded-[10px] mb-[10px] skeleton"></div>
-        <div className="h-[20px] w-3/4 rounded-[10px] skeleton"></div>
+        <div className="h-5 w-full rounded-[10px] mb-[10px] skeleton"></div>
+        <div className="h-5 w-3/4 rounded-[10px] skeleton"></div>
       </div>
     );
   };
@@ -22,7 +22,7 @@ const VideoSection = ({ data, loading }) => {
       <ContentWrapper>
         <div className="text-[24px] text-white mb-[25px]">Official Videos</div>
         {!loading ? (
-          <div className="flex gap-[10px] overflow-x-auto mx-[-20px] px-[20px] md:gap-[20px] md:m-0 md:p-0">
+          <div className="flex gap-[10px] overflow-x-auto -mx-5 px-5 md:gap-5 md:m-0 md:p-0">
             {data?.results?.map((video) => (
               <div
                 key={video.id}
@@ -50,7 +50,7 @@ const VideoSection = ({ data, loading }) => {
             ))}
           </div>
         ) : (
-          <div className="flex gap-[10px] overflow-x-auto mx-[-20px] px-[20px] md:gap-[20px] md:m-0 md:p-0">
+          <div className="flex gap-[10px] overflow-x-auto -mx-5 px-5 md:gap-5 md:m-0 md:p-0">
             {loadingSkeleton()}
             {loadingSkeleton()}
             {loadingSkeleton()}

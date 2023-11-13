@@ -14,7 +14,7 @@ const Popular = () => {
   };
   return (
     <div className="relative mb-[70px]">
-      <ContentWrapper className="flex items-center justify-between mb-[20px]">
+      <ContentWrapper className="flex items-center justify-between mb-5">
         <span className="text-[24px] text-white font-normal">
           What's Popular
         </span>
