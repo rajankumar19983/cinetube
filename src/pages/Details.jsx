@@ -14,8 +14,15 @@ const Details = () => {
     `/${mediaType}/${id}/credits`
   );
 
+  // Labels to be added if any new way of labeling found.
+  const trailerLabels = ["Official Trailer", "Original Trailer", "Trailer"];
+
+  const checkTrailerLabel = (mediaName, labels) => {
+    return labels.some((label) => mediaName.includes(label));
+  };
+
   const trailerData = data?.results?.filter((r) => {
-    return ["Official Trailer", "Original Trailer", "Trailer"].includes(r.name);
+    return checkTrailerLabel(r.name, trailerLabels);
   });
 
   return (

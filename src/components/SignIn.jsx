@@ -38,7 +38,7 @@
 //     }
 //   };
 //   return (
-//     <div className="w-full h-[450px] md:h-[700px] bg-black_1 flex items-center relative">
+//     <div className="w-full h-[450px] md:h-[700px] bg-black flex items-center relative z-10">
 //       {!loading && bg && (
 //         <div className="w-full h-full absolute top-0 left-0 opacity-30 overflow-hidden">
 //           <Img

@@ -2,10 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import SignIn from "./components/SignIn";
-// import SignUp from "./components/SignUp";
 import Home from "./pages/Home";
-// import MyAccount from "./pages/MyAccount";
 import Details from "./pages/Details";
 import SearchResult from "./pages/SearchResults";
 import Explore from "./pages/Explore";
@@ -13,6 +10,9 @@ import PageNotFound from "./pages/PageNotFound";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataFromApi } from "./utils/fetchData";
 import { getApiConfiguration, getGenres } from "./store/homePageSlice";
+// import MyAccount from "./pages/MyAccount";
+// import SignIn from "./components/SignIn";
+// import SignUp from "./components/SignUp";
 
 function App() {
   const dispatch = useDispatch();
@@ -87,7 +87,7 @@ function App() {
         />
         <Route
           path="*"
-          element={<PageNotFound />}
+          element={<Home />}
         />
       </Routes>
       <Footer />
